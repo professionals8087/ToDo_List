@@ -20,6 +20,7 @@ mix.js('resources/js/app.js', 'public/js')
         'resources/css/bootstrap.css',
         'resources/css/owl.carousel.css',
         'resources/css/owl.theme.default.css',
+        'resources/css/style.css',
     ], 'public/css/all.css');
     
     
