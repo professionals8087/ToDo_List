@@ -32,10 +32,10 @@
                 <tr>
                     <td>{{ $stmt->id }}</td>
                     <td>{{ $stmt->name }}</td>
-                    <td><a href="" class="btn btn-danger">حذف <i
+                    <td><a href="/delete/{{ $stmt->id }}" class="btn btn-danger">حذف <i
                                 class="fa-solid fa-trash-can"></i></a></td>
-                    <td><a href="" class="btn btn-primary">ویرایش <i
-                                class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="" class="btn btn-primary">ویرایش <i class="fa-solid fa-pen-to-square"></i></a>
+                    </td>
                 </tr>
             @endforeach
         </table>

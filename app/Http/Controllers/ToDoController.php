@@ -19,4 +19,10 @@ class ToDoController extends Controller
         $stmt = Todo::query()->where('id', $id)->first();
         return view('showTodo', ['show' => $stmt]);
     }
+
+    public function DeleteToDo(Todo $id)
+    {
+        $id->delete();
+        return redirect()->route('list');
+    }
 }
