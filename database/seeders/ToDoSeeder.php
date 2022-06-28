@@ -17,18 +17,21 @@ class ToDoSeeder extends Seeder
     {
         DB::table("todo")->insert([
             [
+                "id" => 1,
                 "name" => "دانشگاه رفتن",
             ]
         ]);
 
         DB::table("todo")->insert([
             [
+                "id" => 2,
                 "name" => "ورزش کردن",
             ]
         ]);
 
         DB::table("todo")->insert([
             [
+                "id" => 3,
                 "name" => "تمرین برنامه نویسی",
             ]
         ]);

@@ -14,7 +14,7 @@
 <body>
     <br>
     <div class="container mt-5">
-        <h1 class="title">لیست کارها</h1>
+        {{-- <h1 class="title">لیست کارها</h1> --}}
         <form action="" method="POST" style="display: flex;">
             @csrf
             <input type="text" class="form-control" placeholder="افزودن جدید" name="name">
@@ -23,21 +23,21 @@
         <br>
         <table class="table table-striped table-dark">
             <tr>
-                {{-- <td>کد</td> --}}
+                <td>کد</td>
                 <td>نام</td>
                 <td>حذف</td>
                 <td>ویرایش</td>
             </tr>
-            {{-- @foreach ($category as $stmt) --}}
+            @foreach ($todo as $stmt)
                 <tr>
-                    {{-- <td>{{ $stmt->id }}</td>
+                    <td>{{ $stmt->id }}</td>
                     <td>{{ $stmt->name }}</td>
-                    <td><a href="/delete/{{ $stmt->id }}" class="btn btn-danger">حذف <i
+                    <td><a href="" class="btn btn-danger">حذف <i
                                 class="fa-solid fa-trash-can"></i></a></td>
-                    <td><a href="/update/{{ $stmt->id }}" class="btn btn-primary">ویرایش <i
-                                class="fa-solid fa-pen-to-square"></i></a></td> --}}
+                    <td><a href="" class="btn btn-primary">ویرایش <i
+                                class="fa-solid fa-pen-to-square"></i></a></td>
                 </tr>
-            {{-- @endforeach --}}
+            @endforeach
         </table>
     </div>
 
