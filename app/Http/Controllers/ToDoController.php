@@ -25,4 +25,14 @@ class ToDoController extends Controller
         $id->delete();
         return redirect()->route('list');
     }
+
+    public function StoreToDo(Request $request)
+    {
+        $todo = new Todo();
+        $todo->name = $request->name;
+        if ($todo->save()) {
+            return redirect()->route('list');
+        }
+        return;
+    }
 }

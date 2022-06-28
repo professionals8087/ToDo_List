@@ -15,7 +15,7 @@
     <br>
     <div class="container mt-5">
         {{-- <h1 class="title">لیست کارها</h1> --}}
-        <form action="" method="POST" style="display: flex;">
+        <form action="{{ route('store') }}" method="POST" style="display: flex;">
             @csrf
             <input type="text" class="form-control" placeholder="افزودن جدید" name="name">
             <button type="submit" class="btn btn-primary"> + </button>

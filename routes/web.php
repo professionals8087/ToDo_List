@@ -26,3 +26,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/list/todos', [ToDoController::class, "ListToDo"])->name('list');
 Route::get('/show/{id}', [ToDoController::class, "ShowToDo"]);
 Route::get('/delete/{id}', [ToDoController::class, "DeleteToDo"]);
+Route::post('/store', [ToDoController::class, "StoreToDo"])->name('store');
