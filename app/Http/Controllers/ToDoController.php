@@ -14,4 +14,9 @@ class ToDoController extends Controller
         return view('todoList', ['todo' => $stmt]);
     }
 
+    public function ShowToDo($id)
+    {
+        $stmt = Todo::query()->where('id', $id)->first();
+        return view('showTodo', ['show' => $stmt]);
+    }
 }
