@@ -11,7 +11,7 @@ class ToDoController extends Controller
     public function ListToDo()
     {
         $stmt = Todo::query()->get()->all();
-        return view('todoList', ['todo' => $stmt]);
+        return view('List', ['todo' => $stmt]);
     }
 
     public function ShowToDo($id)
@@ -29,7 +29,7 @@ class ToDoController extends Controller
     public function StoreToDo(Request $request)
     {
         $todo = new Todo();
-        $todo->name = $request->name;
+        $todo->title = $request->title;
         if ($todo->save()) {
             return redirect()->route('list');
         }

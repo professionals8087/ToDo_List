@@ -23,7 +23,5 @@ const mix = require('laravel-mix');
     
     
     mix.scripts([
-        'resources/js/jquery.js',
-        'resources/js/bootstrap.js',
         'resources/js/app.js',
     ], 'public/js/all.js');

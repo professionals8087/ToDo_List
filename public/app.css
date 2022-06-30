@@ -48,13 +48,60 @@ body {
     border: none;
 }
 
+.todo .top .btn-hide:hover {
+    background-color: #4b64af;
+}
+
 .todo .main {
     padding: 10px 0;
+    text-align: right;
 }
 
 .todo .main .list {
     list-style: none;
+    border-bottom: 1px solid #ccc;
 }
+
+.todo .main .list .item {
+    padding: 10px 5px;
+    border-top: 1px solid #ccc;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo .main .list .item:hover {
+    background-color: #f1f1f1;
+}
+
+.todo .main .list .item .title {
+    width: 80%;
+    font-size: 1.3rem;
+}
+
+.todo .main .list .item .option {
+    width: 20%;
+}
+
+.todo .main .list .item .option .edit {
+    color: #4b64af;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.todo .main .list .item .option .delete {
+    color: red;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.todo .main .list .item .option a:hover {
+    background-color: #fff;
+}
+
 
 .todo .buttom {
     width: 100%;
@@ -87,4 +134,8 @@ body {
     text-decoration: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.todo .buttom form a:hover {
+    background-color: #4b64af;
 }
