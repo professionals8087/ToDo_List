@@ -4,7 +4,7 @@ const text = document.getElementById("text");
 
 function AddFilter() {
   main.classList.add("filter");
-
+  
   btn.querySelector('i.fa-solid').classList.remove('fa-eye-slash');
   btn.querySelector('i.fa-solid').classList.add('fa-eye');
   text.innerText = "نمایش بده";
@@ -12,7 +12,7 @@ function AddFilter() {
 
 function RemoveFilter() {
   main.classList.remove("filter");
-
+  
   btn.querySelector('i.fa-solid').classList.remove('fa-eye');
   btn.querySelector('i.fa-solid').classList.add('fa-eye-slash');
   text.innerText = "مخفی کن";
@@ -27,5 +27,3 @@ btn.addEventListener('click', () => {
     AddFilter();
   }
 });
-
-

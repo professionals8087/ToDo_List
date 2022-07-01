@@ -8,24 +8,30 @@ use Illuminate\Support\Facades\DB;
 
 class ToDoController extends Controller
 {
+    /********************** START **********************/
+    
+    /*********** List ToDo ***********/
     public function ListToDo()
     {
         $stmt = Todo::query()->get()->all();
         return view('List', ['todo' => $stmt]);
     }
 
+    /*********** Show ToDo ***********/
     public function ShowToDo($id)
     {
         $stmt = Todo::query()->where('id', $id)->first();
-        return view('showTodo', ['show' => $stmt]);
+        return view('ShowTodo', ['show' => $stmt]);
     }
 
+    /*********** Delete ToDo ***********/
     public function DeleteToDo(Todo $id)
     {
         $id->delete();
         return redirect()->route('list');
     }
 
+    /*********** Store ToDo ***********/
     public function StoreToDo(Request $request)
     {
         $todo = new Todo();
@@ -36,21 +42,24 @@ class ToDoController extends Controller
         return;
     }
 
-
-    public function UpdateToDO($id) {
+    /*********** Update ToDo ***********/
+    public function UpdateToDO($id)
+    {
         $id = Todo::query()->where('id', $id)->first();
         return view('List', ["id" => $id]);
     }
 
-
-    public function EditToDo(Request $request,$id) {
-        $stmt = Todo::query()->where('id',$id)->first();
-        if($stmt) {
+    /*********** Edit ToDo ***********/
+    public function EditToDo(Request $request, $id)
+    {
+        $stmt = Todo::query()->where('id', $id)->first();
+        if ($stmt) {
             $stmt->title = $request->title;
-            if($stmt->save()) {
+            if ($stmt->save()) {
                 return redirect()->route('list');
             }
         }
         return;
     }
+    /********************** END **********************/
 }

@@ -19,11 +19,11 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+/********************** START **********************/
 Route::get('/list', [ToDoController::class, "ListToDo"])->name('list');
 Route::get('/show/{id}', [ToDoController::class, "ShowToDo"]);
 Route::post('/store', [ToDoController::class, "StoreToDo"])->name('store');
 Route::get('/delete/{id}', [ToDoController::class, "DeleteToDo"]);
 Route::get('/update/{id}', [ToDoController::class, "UpdateToDO"]);
 Route::post('/edit/{id}', [ToDoController::class, "EditToDo"])->name('edit');
-
-
+/********************** END **********************/

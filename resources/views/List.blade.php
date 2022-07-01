@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="../img/7.svg">
+    <link rel="icon" href="../img/icon-todo.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ToDo List 😍</title>
+    <title>😍 ToDo List 😍</title>
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../css/fonts/font/fonts.css">
     <link rel="stylesheet" href="../css/fonts/fontawesome/css/all.min.css">
 </head>
 
 <body>
-    <div class="todo" id="todo">
+    <div class="todo">
         <div class="col-md-12 ">
             <div class="top">
                 <h3>دست نویس</h3>
@@ -21,8 +21,6 @@
                         کن</span></button>
             </div>
             @if (!empty($id))
-                <hr>
-
                 <div class="buttom">
                     <form action="{{ route('edit', ['id' => $id]) }}" method="POST">
                         @csrf
@@ -36,7 +34,9 @@
                     <ul class="list">
                         @foreach ($todo as $stmt)
                             <li class="item">
-                                <div class="title"><input type="checkbox"> {{ $stmt->title }}</div>
+                                <div class="title">
+                                    <input type="checkbox"> {{ $stmt->title }}
+                                </div>
                                 <div class="option">
                                     <a href="/update/{{ $stmt->id }}" class="edit"><i
                                             class="fa-solid fa-pencil"></i></a>
