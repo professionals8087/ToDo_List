@@ -26,7 +26,7 @@
                             <div class="title"><input type="checkbox"> {{ $stmt->title }}</div>
                             <div class="option">
                                 <a href="" class="edit"><i class="fa-solid fa-pencil"></i></a>
-                                <a href="/delete/{{ $stmt->id }}" class="delete"><i class="fa-regular fa-trash-can"></i></a>
+                                <a href="/delete/{{ $stmt->id }}" onclick="return confirm('آیا از حذف یادداشت <{{ $stmt->title }}> اطمینان دارید؟')" class="delete"><i class="fa-regular fa-trash-can"></i></a>
                             </div>
                         </li>
                     @endforeach
@@ -36,7 +36,7 @@
                 <form action="{{ route('store') }}" method="POST">
                     @csrf
                     <input type="text" name="title" placeholder="عنوان کار جدید">
-                    <a><i class="fa-solid fa-plus"></i></a>
+                    <button type="submit"><i class="fa-solid fa-plus"></i></button>
                 </form>
             </div>
         </div>

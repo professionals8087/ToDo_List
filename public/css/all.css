@@ -6887,7 +6887,7 @@ body {
     font-size: 1.5rem;
 }
 
-.todo .buttom form a {
+.todo .buttom form button {
     width: 19%;
     padding: 13px;
     background-color: #3d518f;
@@ -6896,9 +6896,10 @@ body {
     text-decoration: none;
     cursor: pointer;
     border-radius: 5px;
+    border: none;
 }
 
-.todo .buttom form a:hover {
+.todo .buttom form button:hover {
     background-color: #4b64af;
 }
 
