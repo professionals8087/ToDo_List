@@ -35,4 +35,22 @@ class ToDoController extends Controller
         }
         return;
     }
+
+
+    public function UpdateToDO($id) {
+        $id = Todo::query()->where('id', $id)->first();
+        return view('List', ["id" => $id]);
+    }
+
+
+    public function EditToDo(Request $request,$id) {
+        $stmt = Todo::query()->where('id',$id)->first();
+        if($stmt) {
+            $stmt->title = $request->title;
+            if($stmt->save()) {
+                return redirect()->route('list');
+            }
+        }
+        return;
+    }
 }
