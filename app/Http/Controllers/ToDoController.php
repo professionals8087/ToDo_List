@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ToDoRequest;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -32,7 +33,7 @@ class ToDoController extends Controller
     }
 
     /*********** Store ToDo ***********/
-    public function StoreToDo(Request $request)
+    public function StoreToDo(ToDoRequest $request)
     {
         $todo = new Todo();
         $todo->title = $request->title;
@@ -50,7 +51,7 @@ class ToDoController extends Controller
     }
 
     /*********** Edit ToDo ***********/
-    public function EditToDo(Request $request, $id)
+    public function EditToDo(ToDoRequest $request, $id)
     {
         $stmt = Todo::query()->where('id', $id)->first();
         if ($stmt) {

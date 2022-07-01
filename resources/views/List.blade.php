@@ -56,6 +56,9 @@
                     </form>
                 </div>
             @endif
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger" style="margin-top: 10px;">{{ $error }}</div>
+            @endforeach
         </div>
     </div>
     <script src="../js/all.js"></script>

@@ -15,5 +15,11 @@ class ToDoSeeder extends Seeder
      */
     public function run()
     {
+        DB::table("todo")->insert([
+            [
+                "id" => 1,
+                "title" => "دانشگاه رفتن",
+            ]
+        ]);
     }
 }
