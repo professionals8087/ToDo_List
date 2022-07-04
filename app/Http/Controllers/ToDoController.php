@@ -14,16 +14,18 @@ class ToDoController extends Controller
     /*********** List ToDo ***********/
     public function ListToDo()
     {
-        $stmt = Todo::query()->get()->all();
+        $stmt = Todo::getAll();
         return view('List', ['todo' => $stmt]);
     }
 
+    
     /*********** Show ToDo ***********/
     public function ShowToDo($id)
     {
-        $stmt = Todo::query()->where('id', $id)->first();
+        $stmt = Todo::getID($id);
         return view('ShowTodo', ['show' => $stmt]);
     }
+
 
     /*********** Delete ToDo ***********/
     public function DeleteToDo(Todo $id)
@@ -31,6 +33,7 @@ class ToDoController extends Controller
         $id->delete();
         return redirect()->route('list');
     }
+
 
     /*********** Store ToDo ***********/
     public function StoreToDo(ToDoRequest $request)
@@ -43,17 +46,19 @@ class ToDoController extends Controller
         return;
     }
 
+
     /*********** Update ToDo ***********/
     public function UpdateToDO($id)
     {
-        $id = Todo::query()->where('id', $id)->first();
+        $id = Todo::getID($id);
         return view('List', ["id" => $id]);
     }
+
 
     /*********** Edit ToDo ***********/
     public function EditToDo(ToDoRequest $request, $id)
     {
-        $stmt = Todo::query()->where('id', $id)->first();
+        $stmt = Todo::getID($id);
         if ($stmt) {
             $stmt->title = $request->title;
             if ($stmt->save()) {
@@ -62,5 +67,7 @@ class ToDoController extends Controller
         }
         return;
     }
+
+
     /********************** END **********************/
 }
